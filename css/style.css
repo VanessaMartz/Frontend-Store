@@ -1,0 +1,291 @@
+:root { /*Custom properties*/
+    --primario: #9c27B0;
+    --primarioOscuro: #89119D;
+    --secundario: #ffCe00;
+    --secundarioOscuro: rgb(233, 287, 2);
+    --blanco: #fff;
+    --negro: #000;
+    --azulMaya: #73c2FB;
+    --azulFondo: #69A2FB;
+    --azulBruguer: #97B1DA;
+    --azul: #ADC3FB;
+    --azulFuerte: #16235A;
+    --azulFuerte1: #081375;
+    --verdeOlivo: #888C46;
+    --crema: #F2EAED;
+    --oro: #FACA09;
+    --verde: #23EBBA;
+    --verde2: #45EB8A;
+    --verde3: #9FE3D5;
+    --aqua: #25EDF5;
+
+
+    --fuentePrincipal: font-family: 'Staatliches', cursive;
+
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+    font-size:62.5%; /*Nos permite delimitar que 1rem=10px*/
+  }
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  /**Globales**/
+  body{
+      background-color: var(--azulFondo);
+      font-size: 1.6rem;
+      line-height: 1.5; /*Interlineado*/
+  }
+
+  p {
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+  }
+
+  a{
+    text-decoration: none;/*Quita el subrayado de los enlaces*/
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+
+  h1, h2, h3 {
+    text-align: center;
+    color: var(--oro);
+    font-family: var(--fuentePrincipal);
+    text-shadow:0 0 0.5rem var(--azulFuerte1); /*Aplica sombra al texto*/
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: 3.2rem;
+   
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 2.4rem;
+  }
+
+  .header {
+    display: flex;
+    justify-content: center; /*Centra horizontalmente*/
+  }
+
+  .header__logo {
+    margin: 3rem 0; 
+  }
+
+  .footer {
+    background-color: var(--azulFuerte1);
+    padding: 1rem 0;
+    margin-top: 2rem;
+  }
+
+  .footer__texto {
+    font-family: var(--fuentePrincipal);
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--blanco);
+  }
+
+  /*Navegación*/
+  .navegacion {
+    background-color: var(--azulFuerte1);
+    padding: 1rem 0;
+    display:flex; /*Para centrar un elemento*/
+    justify-content: center;
+    /*gap: 2rem; /*Separación forma nueva*/
+    text-transform: uppercase;
+  }
+
+  .navegacion__enlace {
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    font-size: 2rem;
+    margin-right: 2rem; /*Separación entre enlaces*/
+  }
+
+  .navegacion__enlace:last-of-type { /*pseudo selectro last-of-type*/
+    /*selecciona el último elemento*/
+    margin-right: 0; /*Esto le quita el margin-right al último elemento de la barra de navegación*/
+
+  }
+  .navegacion__enlace--activo,
+  .navegacion__enlace:hover {
+    color: var(--secundario);
+  }
+
+  /**Grid**/
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  @media (min-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+  }
+
+  /*Productos*/
+  .producto {
+    background-color: var(--azulFuerte1);
+    padding: 0.5rem;
+   
+  }
+
+  .producto__nombre {
+    font-size: 4rem;
+  }
+
+  .producto__precio {
+    font-size: 2.8rem;
+    color: var(--secundario);
+  }
+
+  .producto__nombre,
+  .producto__precio {
+    font-family: var(--fuentePrincipal);
+    margin: 1rem 0; /*arriba y abajo*/
+    text-align: center;
+    line-height: 1.2; /*interlineado*/
+  }
+
+  /*Gráficos*/
+  .grafico {
+    min-height: 30rem; /*Altura mínima*/
+    background-repeat: no-repeat; /*Para que no se repita la imagen*/
+    background-size: cover; /*Para que la imagen cubra todo el espacio que se le asignó*/
+    grid-column: 1 / 3; /*Define en la posición en que se encontrará la imagen*/
+  }
+
+  .grafico--camisas {
+    grid-row: 2 / 3; /*Va de arriba hacia abajo del 2 al 3*/
+    grid-column: 1 / 3 ; /*Va de izq a der del 1 al 3*/
+    background-image: url(../img/grafico1.jpg); /*Agrega una imagen*/
+  }
+
+  .grafico--node {
+    background-image: url(../img/grafico2.jpg);
+    grid-row: 8 / 9; /*Define la posición en que se encontrará la imagen*/
+  }
+
+  @media (min-width: 768px) {
+  .grafico--node {
+    grid-row: 5 / 6; /* Va de arriba hacia abajo del 5 al 6*/
+    grid-column: 2 / 4; /*Va de izq a der del 2 al 4 */
+  }
+}
+
+/*Nosotros*/
+.nosotros {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+}
+@media (min-width: 768px) {
+  .nosotros {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /*Repetir 2 veces 1 fracción*/
+    column-gap: 2rem;
+  }
+}
+.nosotros_contenido {
+  text-align: justify;
+}
+
+  .nosotros_imagen {
+    grid-row: 1 / 2; /*Va a ir de la fila 1 a la 2*/
+  
+  }
+
+  @media (min-width: 768px) {
+      .nosotros_imagen {
+        grid-column: 2 / 3;
+      }
+  }
+
+  /*Bloques*/
+  .bloques {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem; /*Separación entre elementos del grid*/
+  }
+
+  @media (min-width: 768px) {
+    .bloques {
+      grid-template-columns: repeat(4, 1fr); /*Divide en 4 columnas cuando la pantalla es igual o superior a 768px*/
+    }
+    
+  }
+  .bloque {
+    text-align: center;
+  }
+
+  .bloque_titulo {
+    margin: 0;
+  }
+
+  /*Página del producto*/
+  @media (min-width: 768px) {
+    .camisa{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 2rem; /*Separación entre columnas*/
+    }
+  }
+
+  .formulario{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .formulario__campo{
+    border-color: var(--azulFuerte);
+    border-width: 0.5rem;
+    border-style: solid;
+    background-color: transparent;
+    color: var(--azulFuerte1);
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0.5rem;
+    
+    
+    /*appearance: none; /*Quita la flecha del input*/
+
+    /*border: 1rem solid var(--azulFuerte) = ancho tipo y color de borde*/
+  }
+
+  .formulario__submit{
+    background-color: var(--secundario);
+    border: none;
+    font-size: 2rem;
+    font-family: var(--fuentePrincipal);
+    padding: 2rem;
+    transition: background-color .3s ease; /*Animación de degradado del color del botón de secundario a secundario oscuro*/
+    grid-column: 1 / 3;
+  }
+
+  
+
+  .formulario__submit:hover {
+    cursor:pointer;
+    background-color: var(--secundarioOscuro);
+  }
+
+
