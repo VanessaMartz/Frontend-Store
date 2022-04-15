@@ -1,3 +1,6 @@
 # Frontend-Store
 Página web de práctica de una tienda de ropa frontend con HTML y CSS <br><br>
-[![Netlify Status](https://api.netlify.com/api/v1/badges/87413a68-f720-419b-ad0a-6355a5ad5f9f/deploy-status)](https://app.netlify.com/sites/frontend-store-vaazly-martz/deploys)
+<b>Checa como se visualiza aquí: https://frontend-store-vaazly-martz.netlify.app/ </b> <br><br>
+![Image text](https://github.com/VanessaMartz/Frontend-Store/blob/master/2-FrontendStore-principal.png)
+![Image text](https://github.com/VanessaMartz/Frontend-Store/blob/master/2-FrontendStore-producto.png)
+![Image text](https://github.com/VanessaMartz/Frontend-Store/blob/master/2-FrontendStore-nosotros.png)
